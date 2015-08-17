@@ -1,0 +1,10 @@
+﻿ZufälligeVokabelAussuchen:
+if ObProgrammPrüfModus=ja
+msgbox,ZufälligeVokabelAussuchen:
+;msgbox,ZufälligeVokabelAussuchen
+random,WelcheAktuelleVerfügbareVokabel,1,%zahlverfügbar%
+WelcheAktuelleVokabel:=VerfügbareVokabel%WelcheAktuelleVerfügbareVokabel%
+;msgbox,%WelcheAktuelleVokabel%
+if ObProgrammPrüfModus=ja
+msgbox,ZufälligeVokabelAussuchen-
+return

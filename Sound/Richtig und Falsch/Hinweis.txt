@@ -1,0 +1,1 @@
+Hier können Sie einen Ordner erstellen, wo Sie andere Sounds für richtig und falsch speichern können. Wichtig dabei ist, dass die Sounds für falsch mit "falsch" anfangen und die Sounds für richtig mit "richtig".
