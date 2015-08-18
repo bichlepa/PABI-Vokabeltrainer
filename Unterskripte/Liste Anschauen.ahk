@@ -20,34 +20,34 @@ gui,6:add,button,g6buttonzurück v4buttonzurück yp X+10 w120 h30 default ,%zur�
 zahl=1
 loop
 {
-ProgressZahl:=100*zahl/Gesamtzahl
-progress,%ProgressZahl%,,%Lade_Vokabeln__von__1%%zahl%%Lade_Vokabeln__von__2%%Gesamtzahl%%Lade_Vokabeln__von__3%
-iniread,vokDa,Vokabellisten\%AktuelleListe%.ini,%zahl%,Vokabel
-if vokDa=ja
-{
-iniread,d1,Vokabellisten\%AktuelleListe%.ini,%zahl%,d1
-iniread,d2,Vokabellisten\%AktuelleListe%.ini,%zahl%,d2
-if d2=error
-d2=
-iniread,d3,Vokabellisten\%AktuelleListe%.ini,%zahl%,d3
-if d3=error
-d3=
-iniread,e1,Vokabellisten\%AktuelleListe%.ini,%zahl%,e1
-iniread,e2,Vokabellisten\%AktuelleListe%.ini,%zahl%,e2
-if e2=error
-e2=
-iniread,e3,Vokabellisten\%AktuelleListe%.ini,%zahl%,e3
-if e3=Error
-e3=
-iniread,Fach,Vokabellisten\%AktuelleListe%.ini,%zahl%,Kasten
-if Fach=Error
-Fach=
-lv_add("",zahl,d3,d2,d1,e1,e2,e3,Fach)
+    ProgressZahl:=100*zahl/Gesamtzahl
+    progress,%ProgressZahl%,,%Lade_Vokabeln__von__1%%zahl%%Lade_Vokabeln__von__2%%Gesamtzahl%%Lade_Vokabeln__von__3%
+    iniread,vokDa,Vokabellisten\%AktuelleListe%.ini,%zahl%,Vokabel
+    if vokDa=ja
+    {
+        iniread,d1,Vokabellisten\%AktuelleListe%.ini,%zahl%,d1
+        iniread,d2,Vokabellisten\%AktuelleListe%.ini,%zahl%,d2
+        if d2=error
+        d2=
+        iniread,d3,Vokabellisten\%AktuelleListe%.ini,%zahl%,d3
+        if d3=error
+        d3=
+        iniread,e1,Vokabellisten\%AktuelleListe%.ini,%zahl%,e1
+        iniread,e2,Vokabellisten\%AktuelleListe%.ini,%zahl%,e2
+        if e2=error
+        e2=
+        iniread,e3,Vokabellisten\%AktuelleListe%.ini,%zahl%,e3
+        if e3=Error
+        e3=
+        iniread,Fach,Vokabellisten\%AktuelleListe%.ini,%zahl%,Kasten
+        if Fach=Error
+        Fach=
+        lv_add("",zahl,d3,d2,d1,e1,e2,e3,Fach)
 
-zahl++
-}
-else
-break
+        zahl++
+    }
+    else
+    break
 }
 progress,off
 gui,6:+resize
@@ -65,7 +65,7 @@ gosub,6guisize
 ;msgbox,%AktuelleVokabel%
 LV_Modify(AktuelleVokabel, "Select") ;Vokabel auswählen
 
-gui 6:show,h500 w692,Vokabelliste "%AktuelleListe%"
+gui 6:show,h500 w692,%Vokabelliste_% "%AktuelleListe%"
 sleep,10
 LV_Modify(AktuelleVokabel, "vis") ;Vokabel auswählen
 

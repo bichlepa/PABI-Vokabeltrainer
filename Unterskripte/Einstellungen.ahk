@@ -84,6 +84,10 @@ gui,add,text,x26 y200 w150,%_Wörter_bei_Auswertung_ignorieren_%
 gui,add,edit,X+5 yp w150 vEditZuIgnorierendeWörter
 EditZuIgnorierendeWörter_TT=%_Wörter_bei_Auswertung_ignorieren_Erklärung_%
 
+Gui, Add, GroupBox, x16 y260 w420 h60  , %Export_Und_Import%
+gui,add,button,x26 y280 w150 gButtonSetVokabelnImportieren vImportierenWörter,%Vokabeln_importieren%
+gui,add,button,X+10 y280 w150 gButtonSetVokabelnExportieren vExportierenWörter,%Vokabeln_exportieren%
+
 ;---Einstellungen lesen
 
 iniread,ObVokabelnAussprechen,Einstellungen.ini,Einstellungen,Vokabeln aussprechen,ja
@@ -205,9 +209,59 @@ if WelchesLetztesFensterVorEinstellungen=Vokabelbearbeiten
 Gui, Show, w477 h377, Einstellungen
 Return
 
+ButtonSetVokabelnExportieren:
+gosub,VokabelnExportieren
+return
 
+ButtonSetVokabelnImportieren:
+gui,submit
 
+if WelchesLetztesFensterVorEinstellungen=Hauptmenü
+{
+    if (EditAktuelleListeName = "" or EditErsteSprache = "" or EditZweiteSprache = "")
+    {
+        msgbox,Bitte füllen Sie die leeren Felder aus!
+        gui,show
+        exit
+    }
+    fileappend,,Vokabellisten\%EditAktuelleListeName%.ini ;Neue Liste erstellen. 
+    if errorlevel
+    {
+        MsgBox,Die Liste konnte nicht erstellt werden.
+        gui,show
+        exit
+    }
+    aktuelleListe=%EditAktuelleListeName%
+    iniwrite,%AktuelleListe%,einstellungen.ini,Allgemein,Aktuelle Liste
+}
+else
+{
+    if EditAktuelleListeName
+    {
+        filemove,Vokabellisten\%aktuelleListe%.ini,Vokabellisten\%EditAktuelleListeName%.ini
+        if errorlevel
+        {
+            MsgBox,Die Liste konnte nicht umbenannt werden.
+            gui,show
+            exit
+        }
+        aktuelleListe=%EditAktuelleListeName%
+        iniwrite,%AktuelleListe%,einstellungen.ini,Allgemein,Aktuelle Liste
+    }
+    
+}
 
+if EditErsteSprache
+iniwrite,%EditErsteSprache%,Vokabellisten\%aktuelleListe%.ini,info,Sprache1
+if EditZweiteSprache
+iniwrite,%EditZweiteSprache%,Vokabellisten\%aktuelleListe%.ini,info,Sprache2
+iniwrite,%EditZuIgnorierendeWörter%,Vokabellisten\%aktuelleListe%.ini,info,Wörter ignorieren
+
+WelchesLetztesFensterVorVokabelnHinzufügen=Einstellungen ;um nach den Einstellungen wieder zurückzukommen
+NächstesFenster=VokabelnImportieren
+goto,NächstesFensterÖffnen
+
+return
 
 
 

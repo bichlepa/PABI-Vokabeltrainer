@@ -15,6 +15,7 @@ iniread,aktuelleListeZweiteSprache,Vokabellisten\%AktuelleListe%.ini,info,Sprach
 
 
 Gui, Add, Text, x36 y8 w490 h20 , %Gib_hier_die_Vokabeln_ein%
+Gui, Add, Button, gButtonVokabelnImportieren x480 y8 w100 h20 default, %Vokabeln_importieren%
 gui, add, checkbox,vobKopiermodus gobKopiermodus x466 y35, %Kopiermodus_aktivieren%
 Gui, Add, Text, x36 y40 w70 h20 , %aktuelleListeErsteSprache%
 Gui, Add, Text, x36 y230 w70 h20 ,%aktuelleListeZweiteSprache%
@@ -33,7 +34,7 @@ Gui, Font, S8, Verdana
 gui, add, edit, gtext vKommentarEnglisch x36 y370 w570 r2  -vscroll limit 
 ;~ Gui, Add, Edit, gtext vKommentarEnglisch x36 y230 w300 h110
 gui,font, s9 CDefault ,  MS sans serif
-Gui, Add, Button, Gweiter x35 y410 w110 h40 default, %Vokabel_hinzufüge%
+Gui, Add, Button, gweiter x35 y410 w110 h40 default, %Vokabel_hinzufüge%
 Gui, Add, Button, genden x150 y410 w95 h40 , %Eingabe_beenden%
 Gui, Add, Button, gbuttonLeeren x250 y410 w50 h40 +Center, %Leeren_%
 gui, add, button, gButtonEinstellungen x305 y410 w80 h40, %Einstellungen_%
@@ -463,6 +464,7 @@ iniwrite,%Englisch3%,Vokabellisten\%AktuelleListe%.ini,%zahl%,e3
 if KommentarDeutsch<>
 iniwrite,%KommentarDeutsch%,Vokabellisten\%AktuelleListe%.ini,%zahl%,KommentarDeutsch
 iniwrite,1,Vokabellisten\%AktuelleListe%.ini,%zahl%,Kasten
+iniwrite,%zahl%,Vokabellisten\%AktuelleListe%.ini,info,Anzahl
 
 
 guicontrol,,ZuletztEingegebenD,D: %Deutsch1%`n
@@ -566,6 +568,16 @@ loop,10
 
 
 return
+
+ButtonVokabelnImportieren:
+gui,submit
+gosub,VokabelnBeiEingabeTemporärSpeichernFürHinzufügen
+WelchesLetztesFensterVorVokabelnHinzufügen=VokabelnHinzufügen ;um nach den Einstellungen wieder zurückzukommen
+NächstesFenster=VokabelnImportieren
+goto,NächstesFensterÖffnen
+
+return
+
 
 enden:
 NächstesFenster:=WelchesLetztesFensterVorVokabelnHinzufügen

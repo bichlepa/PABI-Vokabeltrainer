@@ -1,10 +1,11 @@
 ﻿
 VariablenLöschen:
+gui,1:default
 gui,destroy
 gui,2:destroy
 gui,3:destroy
-gui,1:default
-
+gui,6:destroy
+gosub,SprechenStoppen
 settimer,JedeSekundeMachen,off ;Falls Timer an war, ausmachen
 
 zeile=1 ;Alle Infos über vorhandene Vokabeln löschen, (nötig, wenn man eine Vokabel löscht)

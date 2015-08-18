@@ -156,12 +156,13 @@ iniread,_Wörter_bei_Auswertung_ignorieren_,Language files\%WelcheSprache%.ini,E
 iniread,_Wörter_bei_Auswertung_ignorieren_Erklärung_,Language files\%WelcheSprache%.ini,Einstellungen,_Wörter_bei_Auswertung_ignorieren_Erklärung_,Words that you enter here will be ignored on valuation.`nThat means, if there is one of those words in the beginning of the solution`nyou needn't enter it in the solution field.`n`nIf you learn English for example, it is useful to ignore the word "to" before verbs.
 stringreplace,_Wörter_bei_Auswertung_ignorieren_Erklärung_,_Wörter_bei_Auswertung_ignorieren_Erklärung_,``n,`n,all
 
+iniread,Export_Und_Import,Language files\%WelcheSprache%.ini,Einstellungen,Export_Und_Import,Export and import
 
 
 
 
 
-;Vokabeln eingeben / bearbeiten
+;Vokabeln eingeben / bearbeiten / Importieren / Exportieren
 iniread,Gib_hier_die_Vokabeln_ein,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,Gib_hier_die_Vokabeln_ein,Enter your vocabulary here. The topmost lines in English and German must be filled.
 iniread,Vokabel_ändern,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,Vokabel_ändern,Change word
 iniread,Inhalte_vertauschen,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,Inhalte_vertauschen,Swap contents
@@ -172,6 +173,18 @@ iniread,Leeren_,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzu
 iniread,Das_letzte_Wort_bearbeiten,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,Das_letzte_Wort_bearbeiten,Edit the las word
 iniread,Letztes_Wort,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,Letztes_Wort,Last word:
 iniread,Eingabe_beenden,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,Eingabe_beenden,Exit
+iniread,Vokabeln_importieren,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,Vokabeln_importieren,Import words
+iniread,Vokabeln_exportieren,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,Vokabeln_exportieren,Export words
+iniread,Datei_Einlesen,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,Vokabeln_importieren,Read file
+iniread,Wähle_Eine_Datei_Mit_Vokabeln,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,Vokabeln_importieren,Select a file with words
+iniread,importieren_,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,importieren_,Import
+iniread,Datei_Auswählen,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,Datei_Auswählen,Select file
+iniread,Speicherort_Für_Die_Vorlage_wählen,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,Speicherort_Für_Die_Vorlage_wählen,Select where to save the template file
+iniread,Datei_Konnte_Nicht_Gelesen_Werden,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,Datei_Konnte_Nicht_Gelesen_Werden,File could not be read
+iniread,Keine_Vokabel_Gefunden,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,Keine_Vokabel_Gefunden,No words found
+iniread,Soll_Eine_Vorlage_Erstellt_Werden,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,Soll_Eine_Vorlage_Erstellt_Werden,Should a template be created?
+iniread,Das_Format_Ist_nicht_Korrekt,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,Das_Format_Ist_nicht_Korrekt,The format is not correct
+iniread,Speicherort_Für_Den_Export_wählen,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,Speicherort_Für_Den_Export_wählen,Select destination folder
 
 
 ;Schon gemerkt
@@ -182,6 +195,7 @@ iniread,Kopiermodus_,Language files\%WelcheSprache%.ini,Schon gemerkt,Kopiermodu
 iniread,höchstens_zwei_klammern,Language files\%WelcheSprache%.ini,Vokabeln Bearbeiten und Hinzufügen,höchstens_zwei_klammern,More than two brackets are not supported!
 
 ;Liste Anschauen
+iniread,Vokabelliste_,Language files\%WelcheSprache%.ini,Liste anschauen,Vokabelliste_,Word list
 iniread,Vokabel_löschen,Language files\%WelcheSprache%.ini,Liste anschauen,Vokabel_löschen,Delete Vocabulary
 iniread,Lade_Vokabeln__von__,Language files\%WelcheSprache%.ini,Liste anschauen,Lade_Vokabeln__von__,Loading Vocabulary (_ of _)
 stringsplit,Lade_Vokabeln__von__,Lade_Vokabeln__von__,_

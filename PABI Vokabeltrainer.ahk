@@ -9,7 +9,7 @@ NächstesFenster=VokabelnAbfragen
 
 ;Unwichtige Einstellungen>>>
 setbatchlines,-1
-FileEncoding,UTF-16
+FileEncoding,UTF-8
 
 ;<<<Unwichtige Einstellungen
 if 1=Programmprüfmodus
@@ -36,6 +36,8 @@ goto,IncludeÜberspringen ;Damit das Includen nicht alle Skripte ausführt
 #include Unterskripte\Nach doppelten Vokabeln suchen.ahk ;Fenster Nr.8
 #include Unterskripte\Sprache.ahk
 #include Unterskripte\ToolTips.ahk
+#include Unterskripte\Vokabeln importieren.ahk
+#include Unterskripte\Vokabeln exportieren.ahk
 
 #include Unterskripte\VariablenLoeschen.ahk
 
@@ -86,6 +88,8 @@ if NächstesFenster=VokabellistenZusammenführen
 goto,VokabellistenZusammenführen
 if NächstesFenster=NachDoppeltenVokabelnSuchen
 goto,NachDoppeltenVokabelnSuchen
+if NächstesFenster=VokabelnImportieren
+goto,VokabelnImportieren
 
 ;oben sollten alle möglichen Fenster aufgelistet sein.
 Msgbox,Fehler. Ich weiß nicht, welches Fenster ich öffnen soll.
